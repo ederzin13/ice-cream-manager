@@ -51,6 +51,11 @@ class User extends Model
         return User::findBy(['email' => $email]);
     }
 
+    public function getRole(): string 
+    {
+        return $this->role;
+    }
+
     public function __set(string $property, mixed $value): void
     {
         parent::__set($property, $value);

@@ -5,6 +5,8 @@ namespace Config;
 class App
 {
     public static array $middlewareAliases = [
-        'auth' => \App\Middleware\Authenticate::class
+        'auth' => \App\Middleware\Authenticate::class,
+        'admin' => \App\Middleware\AdminAccess::class,
+        'client' => \App\Middleware\ClientAccess::class
     ];
 }
