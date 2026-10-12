@@ -1,10 +1,32 @@
-<body class="min-h-screen bg-gray-100 flex items-center justify-center">
+<div class="flex flex-row min-h-full">
+  <div class="w-1/2 bg-cover bg-center bg-[linear-gradient(to_bottom_left,rgba(139,92,246,0.7),rgba(217,70,239,0.7)),url(https://res.cloudinary.com/ddfxcmxk7/image/upload/v1791847535/picoles_r6lhlp.jpg)] flex flex-col justify-between">
+    <div class="m-5">
+      <h2 class="text-3xl text-white">
+        <img src="https://res.cloudinary.com/ddfxcmxk7/image/upload/v1791752163/Logo_Yupi_final_yqmvsn.png" class="h-16">
+      </h2>
+    </div>
+    <div class="m-5">
+      <div>
+        <h3 class="text-5xl text-white font-bold mb-2">
+          Melhor sorveteria de Guarapuava!
+        </h3>
+        <p class="text-3xl text-white mb-5">
+          Reserve carrinhos de picolé facilmente em nossa nova plataforma!
+        </p>
+      </div>
+    </div>
+  </div>
 
-  <div class="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
+  <div class="w-1/2 flex items-center bg-violet-50 justify-center">
+    <div class="w-full max-w-md p-8">
 
-    <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">
-      Ice cream manager
+    <?php require __DIR__ . '/../layouts/_flash_message.phtml'; ?>
+
+    <h1 class="text-3xl font-bold text-gray-800 mb-5">
+      Bem vindo!
     </h1>
+
+    <p class="mb-2">Acesse o painel para começar.</p>
 
     <form class="space-y-5" method="POST" action="/login">
 
@@ -23,7 +45,8 @@
           placeholder="Digite seu e-mail"
           required
           class="w-full px-4 py-3 border border-gray-300 rounded-lg
-                 focus:outline-none focus:ring-2 focus:ring-blue-500
+                 bg-violet-100
+                 focus:outline-none focus:ring-2 focus:ring-violet-400
                  focus:border-transparent"
         >
       </div>
@@ -43,15 +66,16 @@
           placeholder="Digite sua senha"
           required
           class="w-full px-4 py-3 border border-gray-300 rounded-lg
-                 focus:outline-none focus:ring-2 focus:ring-blue-500
+                 bg-violet-100
+                 focus:outline-none focus:ring-2 focus:ring-violet-400
                  focus:border-transparent"
         >
       </div>
 
       <button
         type="submit"
-        class="w-full py-3 px-4 bg-blue-600 text-white font-semibold
-               rounded-lg hover:bg-blue-700 transition duration-200
+        class="w-full py-3 px-4 bg-purple-800 text-white font-semibold
+               rounded-lg hover:bg-purple-900 transition duration-200
                focus:outline-none focus:ring-2 focus:ring-blue-500
                focus:ring-offset-2"
       >
@@ -61,6 +85,5 @@
     </form>
 
   </div>
-
-</body>
-</html>
+  </div>
+</div>

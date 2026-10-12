@@ -48,7 +48,7 @@ class LoginController extends Controller
     public function logout(): void
     {
         Auth::logout();
-        FlashMessage::success('Logout funcionando');
+        FlashMessage::success('Desconectado com sucesso');
         $this->redirectTo('/');
     }
 }
