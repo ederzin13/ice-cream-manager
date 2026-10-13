@@ -11,6 +11,8 @@ class LoginController extends Controller
 {
     public function index(): void
     {
+        $this->redirect();
+
         $title = 'Tela de login';
         $this->render('login/login', compact('title'));
     }
@@ -33,16 +35,22 @@ class LoginController extends Controller
         $this->redirectTo(route('root'));
     }
 
-
     public function redirect(): void
     {
-        if ($this->currentUser()->role !== 'admin') 
-        {
-            $this->redirectTo('/client-dashboard');
-            return;
-        }
+        $user = Auth::user();
 
-        $this->redirectTo('/admin-dashboard');
+        if ($user) 
+        {
+            if ($user->role === 'client') 
+            {
+                $this->redirectTo(route('client.dashboard'));
+            }
+
+            if ($user->role === 'admin')
+            {
+                $this->redirectTo(route('admin.dashboard'));
+            }
+        }
     }
 
     public function logout(): void
