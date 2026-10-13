@@ -23,7 +23,7 @@ class ClientAccess implements Middleware
         if ($user->role !== 'client')
         {
             FlashMessage::danger('Acesso negado! Seu usuário não é cliente');
-            $this->redirectTo('/admin-dashboard');
+            $this->redirectTo(route('admin.dashboard'));
         }
     }
 

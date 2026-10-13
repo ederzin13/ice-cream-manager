@@ -22,7 +22,7 @@ class AdminAccess implements Middleware
     if ($user->role !== 'admin')
     {
       FlashMessage::danger('Acesso negado! Seu usuário não é admin');
-      $this->redirectTo('client-dashboard');
+      $this->redirectTo(route('client.dashboard'));
     }
   }
   private function redirectTo(string $location): void
