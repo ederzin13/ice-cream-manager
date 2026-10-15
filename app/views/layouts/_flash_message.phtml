@@ -1,6 +1,27 @@
 <?php foreach (\Lib\FlashMessage::get() as $type => $msg) : ?>
-    <div class="alert alert-<?= $type ?> alert-dismissible" role="alert">
-        <div><?= $msg ?></div>
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+    <div
+        class="flex items-center justify-between
+               p-4 mb-4
+               border border-purple-500
+               bg-purple-100
+               text-black font-bold
+               rounded-lg"
+        role="alert"
+    >
+        <div>
+            <?= $msg ?>
+        </div>
+
+        <button
+            type="button"
+            class="ml-4 text-purple-700 hover:text-purple-900
+                   font-bold text-xl leading-none"
+            aria-label="Fechar"
+            onclick="this.parentElement.remove()"
+        >
+            &times;
+        </button>
     </div>
-<? endforeach; ?>
+
+<?php endforeach; ?>

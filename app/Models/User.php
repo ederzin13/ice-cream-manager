@@ -9,13 +9,15 @@ use Core\Database\ActiveRecord\Model;
  * @property int $id
  * @property string $name
  * @property string $email
+ * @property string $address
+ * @property string $phone_number
  * @property string $encrypted_password
- * @property string $avatar_name
+ * @property string $role
  */
 class User extends Model
 {
     protected static string $table = 'users';
-    protected static array $columns = ['name', 'email', 'encrypted_password', 'avatar_name'];
+    protected static array $columns = ['name', 'email', 'address', 'phone_number', 'encrypted_password', 'role'];
 
     protected ?string $password = null;
     protected ?string $password_confirmation = null;
@@ -24,6 +26,9 @@ class User extends Model
     {
         Validations::notEmpty('name', $this);
         Validations::notEmpty('email', $this);
+        Validations::notEmpty('address', $this);
+        Validations::notEmpty('phone_number', $this);
+        Validations::notEmpty('role', $this);
 
         Validations::uniqueness('email', $this);
 
@@ -44,6 +49,11 @@ class User extends Model
     public static function findByEmail(string $email): User | null
     {
         return User::findBy(['email' => $email]);
+    }
+
+    public function getRole(): string 
+    {
+        return $this->role;
     }
 
     public function __set(string $property, mixed $value): void

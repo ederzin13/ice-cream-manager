@@ -1,34 +1,34 @@
-## Problem Track
+## Ice Cream Manager
 
-"Problem Track" is the ultimate solution for organizations seeking to enhance their problem resolution processes, drive operational efficiency, and deliver exceptional customer experiences.
+"Ice Cream Manager" é um sistema de gerenciamento de empréstimo de carrinhos de sorvete, sendo desenvolvido na disciplina de Backend do curso de Sistemas para Internet na UTFPR Câmpus Guarapuava.
 
 ### Dependências
 
 - Docker
 - Docker Compose
 
-### To run
+### Para rodar
 
-#### Clone Repository
+#### Clone o repositório
 
 ```
-$ git clone git@github.com:SI-DABE/problem-track.git
-$ cd problem-track
+$ git clone git@github.com:ederzin13/ice-cream-manager.git
+$ cd ice-cream-manager
 ```
 
-#### Define the env variables
+#### Defina as variáveis env
 
 ```
 $ cp .env.example .env
 ```
 
-#### Install the dependencies
+#### Instalar as dependências
 
 ```
 $ ./run composer install
 ```
 
-#### Up the containers
+#### Subir os containers
 
 ```
 $ docker compose up -d
@@ -40,25 +40,25 @@ ou
 $ ./run up -d
 ```
 
-#### Create database and tables
+#### Criar o banco de dados e as tabelas
 
 ```
 $ ./run db:reset
 ```
 
-#### Populate database
+#### Popular o banco de dados
 
 ```
 $ ./run db:populate
 ```
 
-### Fixed uploads folder permission
+### Corrigir permissão da pasta uploads
 
 ```
 sudo chown www-data:www-data public/assets/uploads
 ```
 
-#### Run the tests
+#### Rodar os testes
 
 ```
 $ docker compose run --rm php ./vendor/bin/phpunit tests --color
@@ -70,7 +70,7 @@ ou
 $ ./run test
 ```
 
-#### Run the linters
+#### Rodar os linters
 
 [PHPCS](https://github.com/PHPCSStandards/PHP_CodeSniffer/)
 
@@ -84,7 +84,7 @@ $ ./run phpcs
 $ ./run phpstan
 ```
 
-Access [localhost](http://localhost)
+Acesso [localhost](http://localhost)
 
 ### Teste de API
 
